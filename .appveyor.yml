@@ -1,4 +1,5 @@
-image: Ubuntu2004
+image: Ubuntu
+
 stack: jdk 11
 
 branches:
@@ -8,9 +9,8 @@ branches:
 build: off
 
 install:
-  - java -jar ./artifacts/app-card-delivery.jar &
+  - java -jar ./artifacts/app-order.jar &
   - chmod +x gradlew
 
-
 build_script:
-  - ./gradlew test -Dselenide.headless=true --info
+  - ./gradlew test --info -Dselenide.headless=true
